@@ -22,7 +22,7 @@ app.get("/", (req, res) => {
 app.use(function errorMiddleWare(err, req, res, next) {
   let response;
   if (NODE_ENV === "production") {
-    response = { error: "Server error" };
+    response = { error: { message: "Server error" } };
   } else {
     console.log(err);
     response = { error: err, message: err.message };
