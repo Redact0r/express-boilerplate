@@ -15,4 +15,8 @@ app.use(cors());
 app.use(helmet());
 app.use(morgan(morganOption));
 
+app.get('/', (req, res) => {
+  res.json({message: 'Hello world!'});
+});
+
 module.exports = app;
